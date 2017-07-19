@@ -1,0 +1,66 @@
+#D f you [cqk]
+#B afk
+#A fac[tsi]
+#D f c[^k ]
+#D fac\b
+#B if [uaouvy] [cqk]
+#D fo c[^k]
+#B [ioaeu]f a [ck]
+#A focu
+#B ofc
+
+#sheet
+#[a-rt-z]+s+ hit
+#who're
+
+### Fuck/Fucking/Fucked ###
+
+match (?!(f you [cqk]|fc[^k]|fac\b|fo c[^k]|fac[tsi]|focu))((f+[^a-z0-9]*)+|(p+[^a-z0-9]*)+(h+[^a-z0-9]*)+)([aouvy]+[^a-z0-9]*)*([ckq]+[^a-z0-9 ]*)+(?<!(afk|if [uaouvy] [cqk]|[ioaeu]f a [ck]|ofc|[ioaeu]f [\/]?c))
+then replace ****
+
+### Shit ###
+
+match (?!(sheet))(((?<!([a-z]))([s$]+[^a-z0-9]*)+([h#]+[^a-z0-9]*)+([1iae@!|]+[^a-z0-9]*)*[t+]+)|(([s$]+[^a-z0-9]*)+([h#]+[^a-z0-9 ]*)+([1ia@!|]+[^a-z0-9]*)*[t+]+))(?<!([a-rt-z]s hit))
+then replace ****
+
+#match (?!(sheet))((?<!([a-z]))([s$]+[^a-z0-9]*)+([h#]+[^a-z0-9]*)+([1iae@!|]+[^a-z0-9]*)*[t+]+)|(([s$]+[^a-z0-9]*)+([h#]+[^a-z0-9 ]*)+([1ia@!|]+[^a-z0-9]*)*[t+]+)(?<!([a-rt-z]+s+ hit))
+#then replace TestOutput2
+
+match (?!taste|toste)T+[eao]+s+t+(?<!(ptest|atest))
+then replace [Test Output 1]
+
+### Bitch/Whore ###
+match (b+[^a-z0-9]*)+((t+[^a-z0-9]*)*[1i!|]+[^a-z0-9]*)+((a+[^a-z0-9]*)*(t+[^a-z0-9]*)+)?([c({\[<]+[^a-z0-9]*)+[h#]+
+then replace *****
+
+match (?!(who're))(w+[^a-z0-9]*)+(h+[^a-z0-9]*)+([o0]+[^a-z0-9 ]*)+(r+[^a-z0-9]*)+[e3]+
+then replace *****
+
+match ([ck\(\[]+[^a-z0-9]*)+(u+[^a-z0-9]*)+(n+[^a-z0-9]*)+([t+]+[^a-z0-9]*)+
+then replace ****
+
+### Homophobia/Racism ###
+match (n+[^a-z0-9]*)+([1i!|]+[^a-z0-9]*)+(g+[^a-z0-9]*){2,}(e+[^a-z0-9]*)*r+
+then replace [RACISM]
+#then deny
+#then kick You have been kicked because you swore in chat
+#then console tellraw @a {text:"\u00a7b%player% \u00a7chas been kicked because they swore in chat"}
+
+match (f+[^a-z0-9]*)+([aeo]+[^a-z0-9]*)+([g9]+[^a-z0-9]*)([g9]+[^a-z0-9]*)+([eio]+[t+]+)*
+then replace [HOMOPHOBIA]
+#then deny
+#then kick You have been kicked because you swore in chat
+#then console tellraw @a {text:"\u00a7b%player% \u00a7chas been kicked because they swore in chat"}
+
+match (?<![ioaf])(f+[^a-z0-9]*)+([ae@4]+[^a-z0-9]*)+[g9]+
+then replace [HOMOPHOBIA]
+#then deny
+#then kick You have been kicked because you swore in chat
+#then console tellraw @a {text:"\u00a7b%player% \u00a7chas been kicked because they swore in chat"}
+
+### Fun filters ###
+match [a-z]+e+[sz]+[^a-z0-9]*n+u+t+[sz]+
+then replace trailmix
+
+#match (\p{Lu}|\s){20,120}
+#then lower
